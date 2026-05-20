@@ -1,0 +1,16 @@
+# Claude Code — configuración local personal (no commitear)
+.claude/settings.local.json
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/
+
+# Node
+node_modules/
+.env
+.env.local
+
+# macOS
+.DS_Store
