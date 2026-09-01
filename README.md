@@ -21,7 +21,7 @@ Metodología: **Spec-Driven Development (SDD)** con Claude Code.
 | `/frontend-design` | Guía de diseño visual al construir o rediseñar UI |
 | `/commit` | Orquesta commit + PR |
 | `/explain` | Aprende conceptos del código |
-| `/meta-prompt` | Ver `ai-specs/.commands/meta-prompt.md` |
+| `/meta-prompt` | Reescribe un prompt ambiguo como uno preciso y accionable |
 
 ## Sincronización
 
