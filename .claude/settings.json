@@ -1,1 +1,15 @@
-{}
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Agent",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 .claude/hooks/sdd-check.py"
+          }
+        ]
+      }
+    ]
+  }
+}

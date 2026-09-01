@@ -1,9 +1,12 @@
 ---
-name: close-requirement
+name: enrich-user-story
 description: Turn a rough task or idea into a decision-closed, senior-reviewable requirement by asking structured questions grounded in the existing codebase. Only draft the final artifact after all key decisions are resolved and the user confirms.
 ---
 
 # Close Requirement
+
+> **SDD Gate** — Este skill es el paso de entrada obligatorio del flujo SDD.  
+> Ningún desarrollo de funcionalidad nueva o cambio de comportamiento debe comenzar sin completar este proceso y obtener aprobación explícita del usuario.
 
 ## Purpose
 
@@ -20,7 +23,7 @@ Optimize for **clarity, completeness, and closed decisions**.
 
 You MUST read the following file before asking any questions:
 
-docs/agent_architecture.md
+docs/doc_architecture.md
 
 If you cannot access or read this file, stop and inform the user.
 
@@ -85,7 +88,7 @@ Before proposing any suggested default:
 
 - inspect the existing codebase when relevant
 - identify current patterns, endpoints, naming conventions, and data structures
-- align with the architecture described in `docs/agent_architecture.md`
+- align with the architecture described in `docs/doc_architecture.md`
 
 Suggested defaults must be grounded in:
 

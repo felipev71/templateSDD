@@ -1,4 +1,4 @@
-# Git Workflow — Felipe (repositorio personal)
+# Git Workflow — [Nombre del proyecto]
 
 ## Propósito
 
@@ -57,7 +57,7 @@ Pegar el output en el campo de descripción del PR en GitHub.
 
 ### 4. Abrir el PR en GitHub
 
-1. Ir a `https://github.com/felipev71/Felipe`.
+1. Ir a `https://github.com/<owner>/<repo>`.
 2. Hacer clic en "Compare & pull request" o ir a **Pull requests → New pull request**.
 3. Confirmar: Base `main` ← Compare `tu-rama`.
 4. Pegar el output de `/write-pr-report` en la descripción.
@@ -67,21 +67,23 @@ Pegar el output en el campo de descripción del PR en GitHub.
 
 - Revisar el diff en la pestaña **Files changed** del PR.
 - Verificar que los cambios tienen sentido y no introducen regresiones.
+- Seguir el checklist de [`doc_review_process.md`](doc_review_process.md) Fase 4 antes de mergear.
 - Una vez satisfecho, hacer clic en **Merge pull request** usando **Squash and merge**.
+- La rama se elimina automáticamente tras el merge (configurado en GitHub Settings).
 
 ---
 
 ## Reglas no negociables
 
-- **Nunca hacer push directo a `main`** — usar siempre PRs.
+- **Nunca hacer push directo a `main`** — está bloqueado por branch protection.
 - **Nunca usar `git push --force` en `main`** — está deshabilitado.
-- **Solo Squash and merge** — mantiene el historial de `main` limpio con un commit por PR.
+- **Solo Squash and merge** — no usar "Create a merge commit" ni "Rebase and merge".
 
 ---
 
 ## Configuración de GitHub Settings (referencia)
 
-Opciones activas en `https://github.com/felipev71/Felipe/settings/branches` (regla para `main`):
+Opciones activas en `https://github.com/<owner>/<repo>/settings/branches` (regla para `main`):
 
 | Opción | Estado |
 |--------|--------|
@@ -90,7 +92,7 @@ Opciones activas en `https://github.com/felipev71/Felipe/settings/branches` (reg
 | Allow force pushes | OFF |
 | Allow deletions | OFF |
 
-En `https://github.com/felipev71/Felipe/settings` (general):
+En `https://github.com/<owner>/<repo>/settings` (general):
 
 | Opción | Estado |
 |--------|--------|
