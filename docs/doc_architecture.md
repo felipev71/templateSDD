@@ -28,6 +28,8 @@ Este documento es la referencia canónica de arquitectura para agentes IA que tr
 - **Runtime:** <lenguaje y versión>
 - **Framework:** <framework>
 - **Base de datos:** <motor + ORM>
+- **Herramienta de migraciones:** <herramienta, ej. Alembic>
+- **Framework de tests:** <framework, ej. pytest>
 - **Deployment:** <destino>
 
 ### Estructura interna
@@ -74,13 +76,26 @@ antes de reportar una violación de placement.
 
 - **Runtime:** <lenguaje y versión>
 - **Framework:** <framework>
+- **Cliente HTTP:** <librería, ej. axios / fetch>
+- **Router:** <librería de routing>
+- **Librería de componentes UI:** <librería, ej. React Bootstrap / MUI>
+- **Design tokens / estilos:** <archivo o convención, ej. src/index.css>
 - **Deployment:** <destino>
+
+### Estructura interna
+
+```
+<módulo-frontend>/
+├── <carpeta-componentes>/    # Componentes de UI reutilizables
+├── <carpeta-servicios>/      # Capa de servicios para comunicación con la API
+└── <carpeta-rutas>/          # Configuración de routing
+```
 
 ### Reglas de placement
 
 1. Nueva pantalla o ruta → `<carpeta-rutas>/`
 2. Componente reutilizable → `<carpeta-componentes>/`
-3. Llamada a API → capa de servicios, nunca `fetch()` directo en un componente
+3. Llamada a API → capa de servicios en `<carpeta-servicios>/`, nunca `fetch()` directo en un componente
 4. Nueva ruta de API → validar la entrada en el borde
 
 ---
