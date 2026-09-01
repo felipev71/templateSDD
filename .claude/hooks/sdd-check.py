@@ -1,7 +1,13 @@
 #!/usr/bin/env python3
 """
 Hook PreToolUse — Agent
-Bloquea invocación de agentes de implementación si no se corrió /enrich-user-story.
+Recuerda el gate SDD antes de invocar agentes de implementación.
+
+No bloquea la invocación: el hook no tiene forma de saber si
+/enrich-user-story se corrió en esta sesión (no hay estado persistente
+entre invocaciones), así que solo reinyecta el recordatorio para que el
+asistente lo autoevalúe. El cumplimiento real del gate depende de que el
+asistente siga esta instrucción, igual que la regla equivalente en CLAUDE.md.
 """
 import json
 import sys
@@ -14,7 +20,7 @@ try:
     if subagent in SDD_AGENTS:
         print(json.dumps({
             "systemMessage": (
-                "🚫 SDD GATE — OBLIGATORIO\n"
+                "SDD GATE — RECORDATORIO\n"
                 "Antes de invocar un agente de implementación debes verificar:\n"
                 "1. ¿Se corrió /enrich-user-story en esta sesión?\n"
                 "2. ¿El requisito está completamente cerrado (decisiones sin ambigüedad)?\n"
@@ -24,5 +30,5 @@ try:
                 "NO procedas con el agente hasta que el requisito esté cerrado."
             )
         }))
-except Exception:
-    pass
+except Exception as e:
+    print(f"sdd-check.py: error al procesar el hook: {e}", file=sys.stderr)

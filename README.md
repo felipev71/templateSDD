@@ -27,7 +27,12 @@ Metodología: **Spec-Driven Development (SDD)** con Claude Code.
 
 Este template se sincronizó por última vez el **2026-09-01** contra el repositorio
 interno de origen en su commit `7fbd423`, portando la evolución de la metodología
-SDD (gate obligatorio por hook, skill de code-review, proceso formal de revisión
-de PRs, handoff entre sesiones) y genericizando todo dato específico del negocio
-de origen. Es una copia manual, no un mecanismo de sincronización automática —
-la próxima actualización también será manual.
+SDD (recordatorio del gate SDD vía hook, skill de code-review, proceso formal de
+revisión de PRs, handoff entre sesiones) y genericizando todo dato específico del
+negocio de origen. Es una copia manual, no un mecanismo de sincronización
+automática — la próxima actualización también será manual.
+
+> El hook `.claude/hooks/sdd-check.py` es un recordatorio, no un bloqueo forzado:
+> no hay estado persistente entre invocaciones para verificar si el requisito
+> ya se cerró, así que el cumplimiento del gate depende de que el asistente
+> siga la instrucción.
