@@ -1,4 +1,4 @@
-# Guía de Verificación — proyecto2026
+# Guía de Verificación — [Nombre del proyecto]
 
 ## Propósito
 
@@ -8,38 +8,41 @@ Guía para elegir el camino de verificación correcto según el tipo de cambio. 
 
 1. Tests unitarios para cambios en lógica pura
 2. Tests de integración para comportamiento multi-capa
-3. Tests E2E o smoke manual cuando el comportamiento real del agente es el criterio de éxito
+3. Tests E2E o smoke manual cuando el comportamiento real del sistema es el criterio de éxito
 
 ---
 
-## `whatsapp-agent/` — comandos de verificación
+## `<módulo-backend>/` — comandos de verificación
 
-### Cambié lógica pura (conversación, detección de idioma, parseo)
+> Reemplaza los comandos de ejemplo por los reales del proyecto, alineados con la
+> estructura declarada en `docs/doc_architecture.md`.
+
+### Cambié lógica pura (dominio, parseo, reglas de negocio)
 
 ```bash
-cd whatsapp-agent && python -m pytest tests/unit -q
+cd <módulo-backend> && python -m pytest tests/unit -q
 ```
 
 ### Cambié repositorio o modelos de base de datos
 
 ```bash
-cd whatsapp-agent && python -m pytest tests/integration -q
+cd <módulo-backend> && python -m pytest tests/integration -q
 ```
 
-### Cambié el webhook o la integración con WhatsApp
+### Cambié una ruta HTTP o una integración externa
 
 Verificación manual con payload de prueba:
 
 ```bash
-curl -X POST http://localhost:8000/webhook \
+curl -X POST http://localhost:8000/<ruta> \
   -H "Content-Type: application/json" \
-  -d '{"object":"whatsapp_business_account",...}'
+  -d '{"...":"..."}'
 ```
 
 ### Arrancar el servidor local
 
 ```bash
-cd whatsapp-agent && uvicorn app.main:app --reload --port 8000
+cd <módulo-backend> && uvicorn app.main:app --reload --port 8000
 ```
 
 ### Health check
@@ -51,19 +54,17 @@ curl http://localhost:8000/health
 ### Verificar migraciones de BD
 
 ```bash
-cd whatsapp-agent && alembic upgrade head
+cd <módulo-backend> && alembic upgrade head
 alembic current
 ```
 
 ---
 
-## Verificación de agentes de clientes (`clientes/{cliente}/05-agentes/`)
+## `<módulo-frontend>/` — comandos de verificación
 
-Cada agente de cliente puede tener su propio README con instrucciones de verificación. Si no las tiene, el mínimo es:
-
-1. Verificar que el agente arranca sin errores
-2. Enviar un mensaje de prueba y verificar respuesta esperada
-3. Confirmar que los datos se persisten correctamente
+```bash
+cd <módulo-frontend> && npm test
+```
 
 ---
 

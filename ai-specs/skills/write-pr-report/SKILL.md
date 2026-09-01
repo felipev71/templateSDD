@@ -56,16 +56,18 @@ Forbidden:
 
 ### 4. Language constraints
 
-- Use simple, direct English
+- Write the PR title and all narrative content in simple, direct Spanish (español), regardless of the language of the input or the codebase.
+- The fixed section headers (`Summary`, `What Changed`, `Validation`, `Automated`, `Manual`, `Reviewer Notes`, `Risks`, `Rollback`) stay in English exactly as defined in the structure below — do not translate them.
+- Technical terms from the code (file names, function names, technologies) stay as-is, untranslated.
 - Avoid phrases like:
-  - "The implementation introduces..."
-  - "This change aims to..."
-  - "Based on the current repository evidence..."
+  - "La implementación introduce..."
+  - "Este cambio tiene como objetivo..."
+  - "Según la evidencia actual del repositorio..."
 - Prefer:
-  - "Adds"
-  - "Fixes"
-  - "Exposes"
-  - "Keeps"
+  - "Agrega"
+  - "Corrige"
+  - "Expone"
+  - "Mantiene"
 
 ### 5. Structure is fixed
 

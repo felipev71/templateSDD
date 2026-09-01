@@ -2,7 +2,7 @@
 <!-- 2-3 oraciones. Qué hace este PR y por qué importa. -->
 
 ## What Changed
-<!-- Agrupado por área: Agent, Database, WhatsApp, Reports, Docs, Config -->
+<!-- Agrupado por área: <área-1>, <área-2>, Docs, Config -->
 -
 
 ## Validation

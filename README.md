@@ -15,7 +15,19 @@ Metodología: **Spec-Driven Development (SDD)** con Claude Code.
 
 | Skill | Uso |
 |-------|-----|
-| `/enrich-user-story` | Cierra el requisito antes de implementar |
+| `/enrich-user-story` | Cierra el requisito antes de implementar (gate obligatorio del flujo SDD) |
 | `/write-pr-report` | Genera la descripción del PR |
+| `/code-review` | Autorevisión de un PR contra los estándares del repo antes de mergear |
+| `/frontend-design` | Guía de diseño visual al construir o rediseñar UI |
 | `/commit` | Orquesta commit + PR |
 | `/explain` | Aprende conceptos del código |
+| `/meta-prompt` | Reescribe un prompt ambiguo como uno preciso y accionable |
+
+## Sincronización
+
+Este template se sincronizó por última vez el **2026-09-01** contra el repositorio
+interno de origen en su commit `7fbd423`, portando la evolución de la metodología
+SDD (gate obligatorio por hook, skill de code-review, proceso formal de revisión
+de PRs, handoff entre sesiones) y genericizando todo dato específico del negocio
+de origen. Es una copia manual, no un mecanismo de sincronización automática —
+la próxima actualización también será manual.
